@@ -48,7 +48,7 @@ Un método para poder encontrar un bracket inicial con el cual trabajar es el si
 1. Comenzamos con un punto inicial cualquiera, $x$. Entre más cerca de $x_{\text{mín}}$ estemos, mejor (aunque a veces no hay forma de saber).
 2. Dicho punto y su imagen: $x, f(x)$, van a ser respectivamente la primera propuesta de $a$ (en $[a,b]$) y su imagen, $f(a)$.
 3. Tomamos un pequeño paso a la izquierda (digamos de tamaño $s$) para obtener la primera propuesta de $b$ y su imagen, $f(b)$.
-4. Puede ser el caso que nuestro paso de tamaño $s$ nos haya llevado a un punto más alto y no uno más bajo (¡recordemos que deseamos minimizar la función!). En ese caso, debemos intercambiar los roles de $a$ con $b$ y los de sus imágenes. 
+4. Puede ser el caso que nuestro paso de tamaño $s$ nos haya llevado a un punto más alto y no uno más bajo (¡recordemos que deseamos minimizar la función!). En ese caso, debemos intercambiar los roles de $a$ con $b$ y sus respectivas imágenes, así como $s$. 
 5. Una vez que sepamos que estamos en dirección de descenso, debemos seguir tomando pasos (si deseamos, siempre de tamaño $s$ o, en general, de un nuevo tamaño $k \times s$ cada vez). 
 6. El algoritmo de detendrá en el momento que la imagen del punto actualizado, $x_{\text{prev}} + k\times s$, sea mayor a la imagen de $x_{\text{prev}}$ ya que, bajo la premisa de que ya estábamos en dirección de descenso, esto solo puede significar que hemos saltado sobre el punto mínimo y comenzado a subir. 
 7. En conclusión de ello, los valores actuales en esa iteración para $a$ y $b$ serán los que garanticen que $x_{\text{mín}} \in [a,b]$.
@@ -71,7 +71,7 @@ function bracket_minimum(f, x=0; s=1e-2, k=2.0)
 			return a < c ? (a, c) : (c, a)
 		end
 		a, ya, b, yb = b, yb, c, yc
-		s *= k
+		s *= k   # s = s * k
 	end
 end		
 
