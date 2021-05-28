@@ -75,7 +75,7 @@ md"
 En Julia tenemos la distribución uniforme por defecto cuando se corre la función `rand`:"
 
 # ╔═╡ 4c6b6aeb-95ec-436f-b4fb-2d02ebffcb76
-rand()
+rand() # Esto es lo que llamamos la distribución U([0,1])
 
 # ╔═╡ eacc76f5-725f-4932-8e7c-500359295793
 rand(10)
@@ -136,7 +136,7 @@ density(sample₂)
 
 # ╔═╡ 6d5afab8-2aca-4445-9d6c-f935a94f4f81
 md"
-## La distribución Chi
+## La distribución Gamma
 "
 
 # ╔═╡ 0ae3a70a-3ea5-448e-9ebb-8083e8067b3f
@@ -212,10 +212,10 @@ end
 # ╟─3b79fe4f-71ba-410d-adae-7ec46a599032
 # ╠═30758af4-dd46-4aa0-b7d8-93d368591396
 # ╠═9a6a8750-ce42-41ad-98a4-e2b8f707bb5b
-# ╟─3b79dcc3-c7b9-4108-b35a-195bf1c962c4
 # ╠═31b7baaa-1f86-46e8-b283-6b1f2ee40b06
 # ╠═3e078961-eac6-479b-bee4-d361c74e4804
 # ╠═fe617c37-bd4e-4bf9-932f-cbaac349f187
+# ╟─3b79dcc3-c7b9-4108-b35a-195bf1c962c4
 # ╠═f3eca08a-3f59-4ab9-bf7a-3df35294032f
 # ╟─bc35e4ad-98b3-490f-a405-ece1a86c76c0
 # ╠═553719e5-2dde-40ba-85a1-56f4bf1a55bc

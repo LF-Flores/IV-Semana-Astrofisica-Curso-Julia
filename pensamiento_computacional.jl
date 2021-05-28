@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.5
+# v0.14.7
 
 using Markdown
 using InteractiveUtils
@@ -288,14 +288,14 @@ Este valor de $\mathbf{d}$ es posible e intuitivo de definir como la dirección 
 
 $\mathbf{x_1} = \mathbf{x_0} + \alpha_\text{mín} \mathbf{d}$
 
-El algoritmo se espera iterar subsecuentes veces, con diferentes valores de $\mathbf{d}$ cada vez, y tomando como valores iniciales los \mathbf{x_k} que vayamos generando en las iteraciones anteriores hasta converger al mínimo de la $f$ multivariable.
+El algoritmo se espera iterar subsecuentes veces, con diferentes valores de $\mathbf{d}$ cada vez, y tomando como valores iniciales los $\mathbf{x_k}$ que vayamos generando en las iteraciones anteriores hasta converger al mínimo de la $f$ multivariable.
 
 Implementemos `line_search`:
 "
 
 # ╔═╡ 6058cd96-9a01-4e2e-a532-88ff48fab5ff
 function line_search(f, x, d)
-	objective = α -> f(x + α*d...)
+	objective = α -> f(x + α*d...) # ... <- to unpack the vector
 	_, α, _ = quadratic_fit_search(objective, x'*d, 5)
 	return x + α*d
 end
