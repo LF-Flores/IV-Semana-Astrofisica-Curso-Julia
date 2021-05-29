@@ -136,7 +136,7 @@ density(sample₂)
 
 # ╔═╡ 6d5afab8-2aca-4445-9d6c-f935a94f4f81
 md"
-## La distribución Gamma
+### La distribución Gamma
 "
 
 # ╔═╡ 0ae3a70a-3ea5-448e-9ebb-8083e8067b3f
@@ -190,7 +190,7 @@ md"## Estimación del kernel de una densidad de probabilidad"
 data = rand(MixtureModel(map(u -> Normal(u, 1.5), [-5, 0, 4]), [0.496552, 0.358621, 1 - 0.496552 - 0.358621]), 10000) 
 
 # ╔═╡ 8acb86ac-aaaa-489c-b95b-edc67bc75507
-kernel_estimado = kde(data)
+kernel_estimado = kde(data)   
 
 # ╔═╡ 7753565a-7d21-49fe-ad77-052b1e75997a
 begin
